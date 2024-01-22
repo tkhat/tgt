@@ -29,7 +29,7 @@ object ApiService {
     @Provides
     fun createColorService(): ColorNetwork {
         val retrofitBuilder = Retrofit.Builder()
-        retrofitBuilder.baseUrl("https://www.colourlovers.com/api/colors/")
+        retrofitBuilder.baseUrl("https://www.colourlovers.com/api/")
         retrofitBuilder.client(
             OkHttpClient().newBuilder()
                 .addInterceptor(loggingInterceptor)

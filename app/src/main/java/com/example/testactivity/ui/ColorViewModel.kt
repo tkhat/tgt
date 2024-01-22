@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testactivity.data.RemoteDataSource
-import com.example.testactivity.data.model.CardData
+import com.example.testactivity.data.model.CardDataItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,8 +17,8 @@ class ColorViewModel @Inject constructor(
     val remoteDataSource: RemoteDataSource
 ) : ViewModel() {
 
-    private val _colorsLiveData = MutableLiveData<CardData>()
-    val colorsLiveData: LiveData<CardData> get() = _colorsLiveData
+    private val _colorsLiveData = MutableLiveData<List<CardDataItem>>()
+    val colorsLiveData: LiveData<List<CardDataItem>> get() = _colorsLiveData
 
     init {
         viewModelScope.launch {
